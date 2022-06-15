@@ -1,0 +1,48 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/index.css' %}">
+</head>
+<body>
+<div class="row email-signup">
+
+
+    <div class="col short">
+        <div class="field">
+            <input autocomplete="off" placeholder="First Name" type="text" name="user[profile_attributes][first_name]" id="user_profile_attributes_first_name">
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="field">
+            <input autocomplete="off" placeholder="Email" type="text" name="user[email]" id="user_email">
+        </div>
+    </div>
+
+
+    <div class="col" style="display:none;">
+        <input autocomplete="off" type="password" name="user[password_dummy]" id="user_password_dummy">
+    </div>
+
+
+    <div class="col">
+        <div class="field">
+            <input autocomplete="off" placeholder="Create Password" type="password" name="user[password]" id="user_password">
+        </div>
+    </div>
+
+    <input type="hidden" name="user[mixpanel_id]" id="user_mixpanel_id" value="180d815f65ce05-0834d222fda9ca-34736704-13c680-180d815f65d2f1">
+
+
+    <div class="col short submit">
+        <input type="submit" name="commit" value="Get Started. It's free!" data-disable-with="Registering..." class="submit btn sign-up-button">
+    </div>
+
+
+    </div>
+</body>
+</html>
