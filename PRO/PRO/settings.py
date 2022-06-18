@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'Main',
 ]
 
@@ -78,8 +79,12 @@ WSGI_APPLICATION = 'PRO.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'Smile',
+        'USER': 'postgres',
+        'PASSWORD': '0022',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
