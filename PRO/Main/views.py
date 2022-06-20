@@ -41,4 +41,7 @@ def login_request(request):
 
 
 def Main(request):
-	return render(request, 'main/index.html')
+	username = request.user.username
+	return render(request, 'main/index.html',{
+		'username':username
+	})
