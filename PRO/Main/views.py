@@ -5,7 +5,13 @@ from django.contrib.auth import login
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework.filters import SearchFilter, OrderingFilter
+from rest_framework.permissions import IsAuthenticated
 
+from .models import Employees
+from .serializers import EmployeesSerializer
 
 
 def register_request(request):
@@ -45,3 +51,10 @@ def Main(request):
 	return render(request, 'main/index.html',{
 		'username':username
 	})
+
+class EmployeesViewSet(viewsets.ModelViewSet):
+    queryset = Employees.objects.all()
+    serializer_class = EmployeesSerializer
+    permission_classes = (IsAuthenticated, )
+    filter_backends = [SearchFilter, OrderingFilter]
+    search_fields = ('manager_id', 'full_name', 'position', 'hire_date', 'salary')
